@@ -52,3 +52,12 @@ node Scripts/audit_app_store_connect.mjs
 ```
 
 Optional env: `APP_STORE_VERSION_STRING`, `TERMS_URL`, `PRIVACY_URL`.
+
+Set support URL on the current macOS version:
+
+```bash
+source fastlane/.env
+node Scripts/set_app_store_support_url.mjs
+```
+
+Public pages: privacy https://alixkyle.github.io/trako/ · support https://alixkyle.github.io/trako/support.html
