@@ -19,7 +19,9 @@ time tracker, focus, productivity, screen time, menu bar, habits, activity
 Trako is a local-only macOS menu bar utility. It records aggregate active-time totals only, using system idle time to pause tracking when the user is inactive. It does not track apps, windows, websites, keystrokes, screenshots, screen contents, or network activity.
 
 ## Support URL
-Set this to the public support/contact page used for Trako in App Store Connect.
+https://alixkyle.github.io/trako/support.html
+
+Contact: support@oonascheduling.app (shared inbox; mention Trako in the subject).
 
 ## Privacy Policy
 Public URL: https://alixkyle.github.io/trako/
