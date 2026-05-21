@@ -1,0 +1,238 @@
+opt_out_usage
+
+default_platform(:mac)
+
+require "base64"
+require "json"
+require "shellwords"
+require "tempfile"
+
+platform :mac do
+  def project_path
+    File.expand_path("../Trako/Trako.xcodeproj", __dir__)
+  end
+
+  def export_options_path
+    File.expand_path("../Config/ExportOptions-AppStore.plist", __dir__)
+  end
+
+  def audit_script_path
+    File.expand_path("../Scripts/audit_app_store_connect.mjs", __dir__)
+  end
+
+  def audit_report_path
+    File.expand_path("../.build/asc-audit-report.md", __dir__)
+  end
+
+  def app_identifier
+    "com.alixkyle.trako"
+  end
+
+  def app_store_api_key!
+    key_id = ENV["APP_STORE_CONNECT_API_KEY_ID"]
+    issuer_id = ENV["APP_STORE_CONNECT_API_ISSUER_ID"]
+    key_b64 = ENV["APP_STORE_CONNECT_API_KEY_BASE64"]
+
+    missing = []
+    missing << "APP_STORE_CONNECT_API_KEY_ID" if key_id.to_s.empty?
+    missing << "APP_STORE_CONNECT_API_ISSUER_ID" if issuer_id.to_s.empty?
+    missing << "APP_STORE_CONNECT_API_KEY_BASE64" if key_b64.to_s.empty?
+
+    unless missing.empty?
+      UI.user_error!(
+        "Missing App Store Connect credentials: #{missing.join(', ')}. " \
+        "Copy fastlane/.env.example to fastlane/.env and fill in your API key."
+      )
+    end
+
+    app_store_connect_api_key(
+      key_id: key_id,
+      issuer_id: issuer_id,
+      key_content: Base64.decode64(key_b64),
+      is_key_content_base64: false,
+      in_house: false
+    )
+  end
+
+  def with_app_store_connect_key_file
+    key_id = ENV["APP_STORE_CONNECT_API_KEY_ID"].to_s.strip
+    issuer_id = ENV["APP_STORE_CONNECT_API_ISSUER_ID"].to_s.strip
+    key_b64 = ENV["APP_STORE_CONNECT_API_KEY_BASE64"].to_s
+
+    temp_key_file = Tempfile.new(["AuthKey_#{key_id}", ".p8"])
+    temp_key_file.write(Base64.decode64(key_b64))
+    temp_key_file.flush
+    temp_key_file.close
+
+    yield(temp_key_file.path, key_id, issuer_id)
+  ensure
+    temp_key_file.unlink if temp_key_file
+  end
+
+  def shellescape(value)
+    Shellwords.escape(value.to_s)
+  end
+
+  def repo_version
+    get_version_number(xcodeproj: project_path, target: "Trako")
+  end
+
+  def repo_build
+    get_build_number(xcodeproj: project_path).to_i
+  end
+
+  desc "Verify App Store Connect API credentials and Xcode project resolution"
+  lane :validate_asc do
+    api_key = app_store_api_key!
+
+    sh("xcodebuild -resolvePackageDependencies -project #{shellescape(project_path)} -scheme Trako")
+
+    version = repo_version
+    build = repo_build
+    latest_build = latest_testflight_build_number(
+      api_key: api_key,
+      app_identifier: app_identifier,
+      platform: "osx",
+      version: version,
+      initial_build_number: build
+    ).to_i
+
+    UI.success("App Store Connect credentials are valid for #{app_identifier}.")
+    UI.message("Repo: #{version} (#{build})")
+    UI.message("Latest uploaded TestFlight build for #{version}: #{latest_build}")
+  end
+
+  desc "Fetch App Store Connect metadata, versions, and builds; write a markdown report"
+  lane :asc_audit do |options|
+    app_store_api_key!
+
+    unless File.exist?(audit_script_path)
+      UI.user_error!("Audit script not found: #{audit_script_path}")
+    end
+
+    report_dir = File.dirname(audit_report_path)
+    sh("mkdir -p #{shellescape(report_dir)}")
+
+    env_parts = ["APP_BUNDLE_ID=#{shellescape(app_identifier)}", "APP_STORE_PLATFORM=MAC_OS"]
+    version = options[:version].to_s.strip
+    env_parts << "APP_STORE_VERSION_STRING=#{shellescape(version)}" unless version.empty?
+
+    command = "#{env_parts.join(' ')} node #{shellescape(audit_script_path)}"
+    sh("#{command} > #{shellescape(audit_report_path)}")
+    report = File.read(audit_report_path)
+    UI.success("Wrote #{audit_report_path}")
+    puts(report)
+  end
+
+  desc "Print recent macOS builds from App Store Connect as JSON"
+  lane :asc_builds do |options|
+    app_store_api_key!
+    limit = (options[:limit] || 10).to_i
+    json_path = File.expand_path("../.build/asc-builds.json", __dir__)
+    sh("mkdir -p #{shellescape(File.dirname(json_path))}")
+
+    with_app_store_connect_key_file do |key_path, key_id, issuer_id|
+      require "spaceship"
+      Spaceship::ConnectAPI.auth(key_id: key_id, issuer_id: issuer_id, filepath: key_path)
+
+      app = Spaceship::ConnectAPI::App.find(app_identifier)
+      UI.user_error!("No App Store Connect app found for #{app_identifier}") unless app
+
+      builds = app.get_builds(
+        filter: { "preReleaseVersion.platform" => "MAC_OS" },
+        includes: "preReleaseVersion"
+      )
+      builds = builds.sort_by { |build| build.uploaded_date || "" }.reverse.first(limit)
+
+      payload = builds.map do |build|
+        {
+          id: build.id,
+          version: build.pre_release_version&.version,
+          build_number: build.version,
+          processing_state: build.processing_state,
+          expired: build.expired,
+          uploaded_date: build.uploaded_date,
+          min_os_version: build.min_os_version,
+          uses_non_exempt_encryption: build.uses_non_exempt_encryption
+        }
+      end
+
+      File.write(json_path, JSON.pretty_generate(payload))
+      UI.success("Wrote #{json_path}")
+      puts(JSON.pretty_generate(payload))
+    end
+  end
+
+  desc "Archive Trako for Mac App Store distribution (requires valid signing in Xcode)"
+  lane :archive_app_store do
+    app_store_api_key!
+
+    archive_path = File.expand_path("../.build/archive/Trako.xcarchive", __dir__)
+    sh("mkdir -p #{shellescape(File.dirname(archive_path))}")
+    sh("rm -rf #{shellescape(archive_path)}")
+
+    with_app_store_connect_key_file do |key_path, key_id, issuer_id|
+      auth_flags = [
+        "-allowProvisioningUpdates",
+        "-authenticationKeyPath", shellescape(key_path),
+        "-authenticationKeyID", shellescape(key_id),
+        "-authenticationKeyIssuerID", shellescape(issuer_id)
+      ].join(" ")
+
+      sh(
+        "xcodebuild " \
+        "-project #{shellescape(project_path)} " \
+        "-scheme Trako " \
+        "-destination 'generic/platform=macOS' " \
+        "-configuration Release " \
+        "-archivePath #{shellescape(archive_path)} " \
+        "archive #{auth_flags}"
+      )
+    end
+
+    UI.success("Archive created at #{archive_path}")
+  end
+
+  desc "Export a Mac App Store .pkg from the latest archive and upload to TestFlight"
+  lane :upload_testflight do |options|
+    api_key = app_store_api_key!
+    archive_path = options[:archive] || File.expand_path("../.build/archive/Trako.xcarchive", __dir__)
+
+    unless File.directory?(archive_path)
+      UI.user_error!("Archive not found at #{archive_path}. Run `fastlane mac archive_app_store` first.")
+    end
+
+    pkg_dir = File.expand_path("../.build/export", __dir__)
+    sh("mkdir -p #{shellescape(pkg_dir)}")
+    sh("rm -f #{shellescape(pkg_dir)}/*.pkg")
+
+    with_app_store_connect_key_file do |key_path, key_id, issuer_id|
+      auth_flags = [
+        "-allowProvisioningUpdates",
+        "-authenticationKeyPath", shellescape(key_path),
+        "-authenticationKeyID", shellescape(key_id),
+        "-authenticationKeyIssuerID", shellescape(issuer_id)
+      ].join(" ")
+
+      sh(
+        "xcodebuild " \
+        "-exportArchive " \
+        "-archivePath #{shellescape(archive_path)} " \
+        "-exportPath #{shellescape(pkg_dir)} " \
+        "-exportOptionsPlist #{shellescape(export_options_path)} " \
+        "#{auth_flags}"
+      )
+    end
+
+    pkg_path = Dir[File.join(pkg_dir, "*.pkg")].first
+    UI.user_error!("No exported .pkg found in #{pkg_dir}") unless pkg_path
+
+    upload_to_testflight(
+      api_key: api_key,
+      app_identifier: app_identifier,
+      pkg: pkg_path,
+      platform: "osx",
+      skip_waiting_for_build_processing: true
+    )
+  end
+end

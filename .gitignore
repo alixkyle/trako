@@ -1,0 +1,13 @@
+.build/
+.swiftpm/
+.DS_Store
+Resources/*.iconset/
+*.xcuserstate
+xcuserdata/
+Config/Trako.local.entitlements
+
+# Fastlane / App Store Connect
+fastlane/.env
+fastlane/report.xml
+fastlane/test_output/
+vendor/bundle/

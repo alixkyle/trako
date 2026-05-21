@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CA372BA52FBE7AFC00DDFA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA372B8F2FBE7AFA00DDFA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA372B962FBE7AFA00DDFA47;
+			remoteInfo = Trako;
+		};
+		CA372BAF2FBE7AFC00DDFA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA372B8F2FBE7AFA00DDFA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA372B962FBE7AFA00DDFA47;
+			remoteInfo = Trako;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA372B972FBE7AFA00DDFA47 /* Trako.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trako.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA372BA42FBE7AFC00DDFA47 /* TrakoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrakoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA372BAE2FBE7AFC00DDFA47 /* TrakoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrakoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CA372B812FBE900100DDFA47 /* ../Sources/Trako */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ../Sources/Trako;
+			sourceTree = "<group>";
+		};
+		CA372B992FBE7AFA00DDFA47 /* Trako */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Trako;
+			sourceTree = "<group>";
+		};
+		CA372BA72FBE7AFC00DDFA47 /* TrakoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrakoTests;
+			sourceTree = "<group>";
+		};
+		CA372BB12FBE7AFC00DDFA47 /* TrakoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrakoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA372B942FBE7AFA00DDFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BA12FBE7AFC00DDFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BAB2FBE7AFC00DDFA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA372B8E2FBE7AFA00DDFA47 = {
+			isa = PBXGroup;
+			children = (
+				CA372B812FBE900100DDFA47 /* ../Sources/Trako */,
+				CA372B992FBE7AFA00DDFA47 /* Trako */,
+				CA372BA72FBE7AFC00DDFA47 /* TrakoTests */,
+				CA372BB12FBE7AFC00DDFA47 /* TrakoUITests */,
+				CA372B982FBE7AFA00DDFA47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA372B982FBE7AFA00DDFA47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA372B972FBE7AFA00DDFA47 /* Trako.app */,
+				CA372BA42FBE7AFC00DDFA47 /* TrakoTests.xctest */,
+				CA372BAE2FBE7AFC00DDFA47 /* TrakoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA372B962FBE7AFA00DDFA47 /* Trako */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA372BB82FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "Trako" */;
+			buildPhases = (
+				CA372B932FBE7AFA00DDFA47 /* Sources */,
+				CA372B942FBE7AFA00DDFA47 /* Frameworks */,
+				CA372B952FBE7AFA00DDFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CA372B812FBE900100DDFA47 /* ../Sources/Trako */,
+				CA372B992FBE7AFA00DDFA47 /* Trako */,
+			);
+			name = Trako;
+			packageProductDependencies = (
+			);
+			productName = Trako;
+			productReference = CA372B972FBE7AFA00DDFA47 /* Trako.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA372BA32FBE7AFC00DDFA47 /* TrakoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA372BBB2FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "TrakoTests" */;
+			buildPhases = (
+				CA372BA02FBE7AFC00DDFA47 /* Sources */,
+				CA372BA12FBE7AFC00DDFA47 /* Frameworks */,
+				CA372BA22FBE7AFC00DDFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA372BA62FBE7AFC00DDFA47 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CA372BA72FBE7AFC00DDFA47 /* TrakoTests */,
+			);
+			name = TrakoTests;
+			packageProductDependencies = (
+			);
+			productName = TrakoTests;
+			productReference = CA372BA42FBE7AFC00DDFA47 /* TrakoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA372BAD2FBE7AFC00DDFA47 /* TrakoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA372BBE2FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "TrakoUITests" */;
+			buildPhases = (
+				CA372BAA2FBE7AFC00DDFA47 /* Sources */,
+				CA372BAB2FBE7AFC00DDFA47 /* Frameworks */,
+				CA372BAC2FBE7AFC00DDFA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA372BB02FBE7AFC00DDFA47 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CA372BB12FBE7AFC00DDFA47 /* TrakoUITests */,
+			);
+			name = TrakoUITests;
+			packageProductDependencies = (
+			);
+			productName = TrakoUITests;
+			productReference = CA372BAE2FBE7AFC00DDFA47 /* TrakoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA372B8F2FBE7AFA00DDFA47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					CA372B962FBE7AFA00DDFA47 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					CA372BA32FBE7AFC00DDFA47 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = CA372B962FBE7AFA00DDFA47;
+					};
+					CA372BAD2FBE7AFC00DDFA47 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = CA372B962FBE7AFA00DDFA47;
+					};
+				};
+			};
+			buildConfigurationList = CA372B922FBE7AFA00DDFA47 /* Build configuration list for PBXProject "Trako" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA372B8E2FBE7AFA00DDFA47;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CA372B982FBE7AFA00DDFA47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA372B962FBE7AFA00DDFA47 /* Trako */,
+				CA372BA32FBE7AFC00DDFA47 /* TrakoTests */,
+				CA372BAD2FBE7AFC00DDFA47 /* TrakoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA372B952FBE7AFA00DDFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BA22FBE7AFC00DDFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BAC2FBE7AFC00DDFA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA372B932FBE7AFA00DDFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BA02FBE7AFC00DDFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA372BAA2FBE7AFC00DDFA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA372BA62FBE7AFC00DDFA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA372B962FBE7AFA00DDFA47 /* Trako */;
+			targetProxy = CA372BA52FBE7AFC00DDFA47 /* PBXContainerItemProxy */;
+		};
+		CA372BB02FBE7AFC00DDFA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA372B962FBE7AFA00DDFA47 /* Trako */;
+			targetProxy = CA372BAF2FBE7AFC00DDFA47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CA372BB62FBE7AFC00DDFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA372BB72FBE7AFC00DDFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		CA372BB92FBE7AFC00DDFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ../Config/Trako.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Trako;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.trako;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CA372BBA2FBE7AFC00DDFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ../Config/Trako.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Trako;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.trako;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CA372BBC2FBE7AFC00DDFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.TrakoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trako.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trako";
+			};
+			name = Debug;
+		};
+		CA372BBD2FBE7AFC00DDFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.TrakoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trako.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trako";
+			};
+			name = Release;
+		};
+		CA372BBF2FBE7AFC00DDFA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.TrakoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Trako;
+			};
+			name = Debug;
+		};
+		CA372BC02FBE7AFC00DDFA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BF36HW28BX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alixkyle.TrakoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Trako;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA372B922FBE7AFA00DDFA47 /* Build configuration list for PBXProject "Trako" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA372BB62FBE7AFC00DDFA47 /* Debug */,
+				CA372BB72FBE7AFC00DDFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA372BB82FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "Trako" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA372BB92FBE7AFC00DDFA47 /* Debug */,
+				CA372BBA2FBE7AFC00DDFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA372BBB2FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "TrakoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA372BBC2FBE7AFC00DDFA47 /* Debug */,
+				CA372BBD2FBE7AFC00DDFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA372BBE2FBE7AFC00DDFA47 /* Build configuration list for PBXNativeTarget "TrakoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA372BBF2FBE7AFC00DDFA47 /* Debug */,
+				CA372BC02FBE7AFC00DDFA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA372B8F2FBE7AFA00DDFA47 /* Project object */;
+}
