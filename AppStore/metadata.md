@@ -40,6 +40,6 @@ Source: `AppStore/privacy-policy-draft.md` (published via `docs/index.html` on G
 
 ## Required Before Submission
 - Add the live support/contact URL to App Store Connect.
-- Publish the privacy policy text at a live public URL and add it to App Store Connect.
+- Privacy policy is published at the URL above; keep `docs/index.html` in sync with `AppStore/privacy-policy-draft.md` when policy text changes, then push `main` (GitHub Pages serves `/docs`).
 - Capture final Mac App Store screenshots from the signed sandboxed build.
 - Submit using an Apple Developer Program team and App Store Connect app record.
