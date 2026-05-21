@@ -61,3 +61,12 @@ node Scripts/set_app_store_support_url.mjs
 ```
 
 Public pages: privacy https://alixkyle.github.io/trako/ · support https://alixkyle.github.io/trako/support.html
+
+Sync description, keywords, subtitle, promotional text, and What's New from the repo copy file:
+
+```bash
+source fastlane/.env
+node Scripts/sync_app_store_metadata.mjs
+```
+
+Edit `AppStore/app-store-metadata-copy.json` first. Optional: `UPDATE_REVIEW_NOTES=true` to sync review notes.

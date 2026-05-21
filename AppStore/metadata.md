@@ -1,5 +1,16 @@
 # Trako App Store Metadata
 
+**Source of truth for App Store Connect copy:** `AppStore/app-store-metadata-copy.json`
+
+Edit that JSON, then sync to Connect:
+
+```bash
+source fastlane/.env
+node Scripts/sync_app_store_metadata.mjs
+```
+
+Dry run: `DRY_RUN=true node Scripts/sync_app_store_metadata.mjs`
+
 ## Name
 Trako
 
@@ -9,11 +20,10 @@ Active Mac time in your menu bar
 ## Category
 Productivity
 
-## Short Description
-Trako tracks active time on your Mac from the menu bar, pauses automatically when you go idle, and keeps daily and hourly stats locally.
-
 ## Keywords
 time tracker, focus, productivity, screen time, menu bar, habits, activity
+
+_(Description, promotional text, and What's New live in `app-store-metadata-copy.json`.)_
 
 ## Review Notes
 Trako is a local-only macOS menu bar utility. It records aggregate active-time totals only, using system idle time to pause tracking when the user is inactive. It does not track apps, windows, websites, keystrokes, screenshots, screen contents, or network activity.

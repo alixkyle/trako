@@ -1,0 +1,21 @@
+{
+  "defaultUrls": {
+    "supportUrl": "https://alixkyle.github.io/trako/support.html",
+    "marketingUrl": ""
+  },
+  "locales": {
+    "en-GB": {
+      "appInfo": {
+        "subtitle": "Active Mac time in menu bar"
+      },
+      "version": {
+        "description": "Trako shows how much active time you spend on your Mac—right from the menu bar.\n\nSee live hours, minutes, and seconds while you work. Trako pauses when you go idle, when the screen locks, or when you tap Pause, so totals reflect real attention—not background time.\n\nWHAT YOU GET\n• Menu bar timer you can glance at anytime\n• Dashboard with daily, weekly, and longer-range charts\n• Streaks, averages, and hour-by-hour day views\n• Adjustable idle threshold in Settings\n• Launch at Login so tracking starts with your Mac\n\nPRIVACY BY DESIGN\nTrako stores aggregate active-time totals locally on your Mac. It does not record apps, windows, websites, documents, keystrokes, screenshots, or screen contents. No account required.\n\nTRAKO PRO (optional)\n• Tag time to projects for clearer breakdowns on your dashboard\n• See chart colours by project when you plan your week\n\nSupport: https://alixkyle.github.io/trako/support.html\nPrivacy: https://alixkyle.github.io/trako/",
+        "keywords": "time tracker,focus,productivity,menu bar,mac,activity,habits,screen time",
+        "promotionalText": "Know how much active time you spend on your Mac—idle-aware, local-only, always in the menu bar.",
+        "whatsNew": "Welcome to Trako for Mac.\n\n• Menu bar timer with live active time\n• Idle-aware tracking with adjustable threshold\n• Dashboard charts for day, week, month, and year\n• Optional pause when the screen is locked\n• Trako Pro: tag time to projects on your dashboard",
+        "supportUrl": "https://alixkyle.github.io/trako/support.html"
+      }
+    }
+  },
+  "reviewNotes": "Trako is a local-only macOS menu bar utility. It records aggregate active-time totals only, using system idle time to pause tracking when the user is inactive. It does not track apps, windows, websites, keystrokes, screenshots, screen contents, or network activity.\n\nPrivacy policy: https://alixkyle.github.io/trako/\nSupport: https://alixkyle.github.io/trako/support.html (support@oonascheduling.app)\n\nTrako Pro (if enabled on this build): one-time in-app purchase com.alixkyle.trako.pro — unlocks project tagging on the dashboard. Restore Purchases is in Settings."
+}
