@@ -19,7 +19,8 @@
 - Set the final bundle identifier in Apple Developer and App Store Connect.
 - Enable App Sandbox in the Xcode target and use `Config/Trako.entitlements`.
 - Sign with an Apple Developer Program team and Mac App Store distribution certificate/profile.
-- Replace placeholder support and privacy policy URLs with live public URLs.
+- Privacy policy URL: https://alixkyle.github.io/trako/ (GitHub Pages from `docs/index.html`).
+- Replace placeholder support URL with a live public contact page.
 - Add final screenshots to App Store Connect.
 - Test the signed sandboxed build on a clean macOS user account.
 - Confirm Launch at Login behavior from an installed `/Applications/Trako.app` build.
