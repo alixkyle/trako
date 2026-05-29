@@ -15,7 +15,10 @@ Dry run: `DRY_RUN=true node Scripts/sync_app_store_metadata.mjs`
 Trako
 
 ## Subtitle
-Active Mac time in your menu bar
+Active time in your menu bar
+
+## App name (App Store Connect)
+Use **Trako** only. Do not use “Trako for Mac” or similar — App Review flags “Mac” in the app name (Guideline 5.2.5).
 
 ## Category
 Productivity

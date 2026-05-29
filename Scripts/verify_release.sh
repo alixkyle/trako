@@ -13,9 +13,30 @@ echo "Verifying code signature..."
 codesign --verify --deep --strict --verbose=2 "$APP_PATH"
 
 echo "Checking sandbox entitlement..."
-if ! codesign -d --entitlements :- "$APP_PATH" 2>/dev/null | grep -q "com.apple.security.app-sandbox"; then
+ENTITLEMENTS_XML="$(codesign -d --entitlements :- "$APP_PATH" 2>/dev/null || true)"
+if ! grep -q "com.apple.security.app-sandbox" <<< "$ENTITLEMENTS_XML"; then
   echo "Missing sandbox entitlement" >&2
   exit 1
+fi
+
+echo "Checking home-relative sandbox exception paths..."
+if grep -q 'home-relative-path' <<< "$ENTITLEMENTS_XML"; then
+  while IFS= read -r path; do
+    if [[ "$path" != /* ]]; then
+      echo "Invalid home-relative sandbox path (must start with /): $path" >&2
+      exit 1
+    fi
+  done < <(
+    awk '
+      /home-relative-path/ { in_key=1; next }
+      in_key && /<string>/ {
+        gsub(/.*<string>/, "")
+        gsub(/<\/string>.*/, "")
+        print
+      }
+      in_key && /<\/array>/ { in_key=0 }
+    ' <<< "$ENTITLEMENTS_XML"
+  )
 fi
 
 echo "Checking Info.plist..."
