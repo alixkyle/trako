@@ -1,5 +1,16 @@
 # Trako App Store Checklist
 
+## Resubmitting after App Review (May 2026)
+
+Apple rejected version 1.0 (3) for two issues. Fix both before uploading a new build:
+
+1. **Guideline 5.2.5 — App name:** In App Store Connect, set the app name to **Trako** (not “Trako for Mac”). Sync metadata from the repo:
+   ```bash
+   source fastlane/.env
+   node Scripts/sync_app_store_metadata.mjs
+   ```
+2. **Guideline 2.4.5(i) — Entitlements:** Use `Config/Trako.entitlements` (home-relative read paths must start with `/`, e.g. `/Library/Application Support/Trako/`). Archive and upload a **new binary** (build number 4+); metadata-only changes are not enough for the entitlement fix.
+
 ## Done in this repo
 
 - App bundle generation with `Scripts/build_app.sh`.

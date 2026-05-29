@@ -180,7 +180,7 @@ async function getAppInfoLocalizations(appId) {
 
   for (const appInfo of appInfosPayload.data || []) {
     const params = new URLSearchParams({
-      'fields[appInfoLocalizations]': 'locale,subtitle',
+      'fields[appInfoLocalizations]': 'locale,name,subtitle',
       limit: '200',
     });
     const payload = await appStoreRequest(`/appInfos/${appInfo.id}/appInfoLocalizations?${params}`);
@@ -281,20 +281,39 @@ if (updateAppInfo) {
   for (const { localization } of appInfoLocalizationRecords) {
     const locale = localization.attributes?.locale;
     const localeCopy = copy.locales?.[locale];
-    const subtitle = localeCopy?.appInfo?.subtitle;
-    if (!subtitle) {
+    const appInfoCopy = localeCopy?.appInfo;
+    if (!appInfoCopy) {
       continue;
     }
 
-    assertMaxLength(`Subtitle (${locale})`, subtitle, LIMITS.subtitle);
-    const nextSubtitle = planFieldUpdates(localization.attributes?.subtitle, subtitle);
-    if (nextSubtitle) {
+    const appInfoAttributes = {};
+    const appInfoChangedFields = [];
+
+    if (appInfoCopy.name) {
+      assertMaxLength(`App name (${locale})`, appInfoCopy.name, 30);
+      const nextName = planFieldUpdates(localization.attributes?.name, appInfoCopy.name);
+      if (nextName) {
+        appInfoAttributes.name = nextName;
+        appInfoChangedFields.push('name');
+      }
+    }
+
+    if (appInfoCopy.subtitle) {
+      assertMaxLength(`Subtitle (${locale})`, appInfoCopy.subtitle, LIMITS.subtitle);
+      const nextSubtitle = planFieldUpdates(localization.attributes?.subtitle, appInfoCopy.subtitle);
+      if (nextSubtitle) {
+        appInfoAttributes.subtitle = nextSubtitle;
+        appInfoChangedFields.push('subtitle');
+      }
+    }
+
+    if (Object.keys(appInfoAttributes).length > 0) {
       plannedUpdates.push({
         kind: 'appInfoLocalization',
         locale,
-        field: 'subtitle',
+        field: appInfoChangedFields.join(', '),
         id: localization.id,
-        attributes: { subtitle: nextSubtitle },
+        attributes: appInfoAttributes,
       });
     }
   }
